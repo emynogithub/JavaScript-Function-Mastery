@@ -68,3 +68,8 @@ console.log("==================some===========");
 const someUser = dbUsers.some(dbUser => dbUser.first_name === "Jane");
 
 console.log(someUser)
+
+console.log("===================every=============")
+const everyUser = dbUsers.every(dbUser => dbUser.first_name === "Jane");
+
+console.log(everyUser)
