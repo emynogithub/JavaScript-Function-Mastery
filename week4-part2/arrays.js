@@ -73,3 +73,67 @@ console.log("===================every=============")
 const everyUser = dbUsers.every(dbUser => dbUser.first_name === "Jane");
 
 console.log(everyUser)
+
+
+console.log("=====================filter and map together==============")
+let forms = [{
+    name: "Chizoba Ajaegbu",
+    age: 35,
+    religion: "Christian",
+    email: "chizoba@gmail.com"
+},
+
+{
+    name: "Gideon Arinze",
+    age: 35,
+    religion: "Christian",
+    email: "chizoba@gmail.com"
+},
+
+{
+    name: "Divine Ajaegbu",
+    age: 25,
+    religion: "Christian",
+    email: "chizoba@gmail.com"
+},
+
+{
+    name: "Shedrack Ajaegbu",
+    age: 21,
+    religion: "Christian",
+    email: "chizoba@gmail.com"
+},
+]
+
+const getForm = forms.filter(form => {
+    return form.age === 35;
+})
+
+const getNewForm = getForm.map(form => form.name)
+
+console.log(getNewForm)
+
+console.log("================Task==============")
+// find the total
+// number of unique IP addresses that accessed a specific critical endpoint (/api/admin)
+
+const logs = [
+{ ip: '1.1.1.1', endpoint: '/api/users' },
+{ ip: '2.2.2.2', endpoint: '/api/admin' },
+{ ip: '1.1.1.1', endpoint: '/api/products' },
+{ ip: '3.3.3.3', endpoint: '/api/admin' },
+{ ip: '2.2.2.2', endpoint: '/api/admin' },
+];
+
+const uniqueAdminIPs = logs
+.filter(log => log.endpoint === '/api/admin') // 1. Select only admin logs
+.map(log => log.ip) // 2. Extract just the IP addresses
+.reduce((uniqueIPs, ip) => { // 3. Reduce to a set of unique IPs
+if (!uniqueIPs.includes(ip)) {
+uniqueIPs.push(ip);
+}
+return uniqueIPs;
+}, []) // Start with an empty array for unique IPs
+.length; 
+
+console.log(uniqueAdminIPs)
