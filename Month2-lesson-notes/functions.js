@@ -59,7 +59,7 @@ const listNum = function() {
     console.log(arguments)
 }
 
-listNum("traditional function:", 1, 2, 3, 4, 5, 7, 90)
+listNum("traditional function:", 1, 2, 3, 4, 5, 7, 90, 7, 0)
 
 // Arrow function
 const listNewNum = () => {
